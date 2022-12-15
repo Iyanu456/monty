@@ -1,5 +1,5 @@
 #include "monty.h"
-void read_file(char *file)
+void read_file(char *file, stack_t **stack)
 {
 	char *line;
 	size_t i = 0;
@@ -22,7 +22,7 @@ void read_file(char *file)
 			line_count++;
 			continue;
 		}
-		s = get_op_func(line, stack, line_number);
+		s = get_op_func(line, stack, line_count);
 		if (s == 0)
 		{
 			fprintf(stderr, "L%d: unkown instruction %s\n", line_count, line);

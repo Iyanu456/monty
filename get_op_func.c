@@ -1,8 +1,7 @@
 #include "monty.h"
-int get_op_func(char *str)
+int get_op_func(char *str, stack_t **stack, int line_number)
 {
 	int i = 0;
-	void func;
 
 	instruction_t instruct[] = {
 		{"push", _push},
@@ -20,7 +19,7 @@ int get_op_func(char *str)
 	{
 		if (strcmp(instruct[i].opcode, str) == 1)
 		{
-			func = instruct[i].f(stack, line_number);
+			instruct[i].f(stack, line_number);
 			return(0);
 		}
 		i++;

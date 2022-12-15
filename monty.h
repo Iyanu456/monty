@@ -47,6 +47,6 @@ typedef struct global_variable
 
 extern global_var var_global;
 char *parse_line(char *buffer, unsigned int line_num);
-void read_file(char *file);
-int get_op_func(char *str);
+void read_file(char *file, stack_t **stack);
+int get_op_func(char *str, stack_t **stack, int line_number);
 #endif
