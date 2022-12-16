@@ -1,7 +1,7 @@
 #include "monty.h"
 int get_op_func(char *str, stack_t **stack, int line_number)
 {
-	int i = 0;
+	int i;
 
 	instruction_t instruct[] = {
 		{"push", _push},
@@ -11,9 +11,9 @@ int get_op_func(char *str, stack_t **stack, int line_number)
 		{NULL, NULL},
 	};
 
-	while(instruct[i].f != NULL && strcmp(instruct[i].opcode, str) != 0)
+	for (i = 0; i < 4; i++)
 	{
-		if (strcmp(instruct[i].opcode, str) == 1)
+		if (strcmp(instruct[i].opcode, str) == 0)
 		{
 			instruct[i].f(stack, line_number);
 			return(0);

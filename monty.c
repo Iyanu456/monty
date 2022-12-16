@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	else
-		read_file(argv[1], &stack);
+
+	read_file(argv[1], &stack);
 	return (0);
 }

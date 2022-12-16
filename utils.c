@@ -43,6 +43,7 @@ void _push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = top;
 	*stack = top;
+	return;
 }
 
 /**
@@ -79,6 +80,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", runner->n);
+	return;
 }
 /**
  * _pop - remove element a list
