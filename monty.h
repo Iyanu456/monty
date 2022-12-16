@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ctype.h>
+
+extern int push_arg;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -46,7 +48,14 @@ typedef struct global_variable
 } global_var;
 
 extern global_var var_global;
+
 char *parse_line(char *buffer, unsigned int line_num);
 void read_file(char *file, stack_t **stack);
 int get_op_func(char *str, stack_t **stack, int line_number);
+int isnum(char *str);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void free_dlistint(stack_t *head);
 #endif

@@ -8,10 +8,6 @@ int get_op_func(char *str, stack_t **stack, int line_number)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
-		{"swap", _swap},
-		{"add", _add},
-		{"nop", _nop},
-		{"sub", _sub},
 		{NULL, NULL},
 	};
 
