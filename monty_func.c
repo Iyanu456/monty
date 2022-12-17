@@ -18,9 +18,10 @@ void read_file(char *file, stack_t **stack)
 	while ((read = getline(&var_global.buffer, &i,var_global.file) != -1))
 	{
 		line = parse_line(var_global.buffer, line_count);
-		if (line[0] == '#')
+		if (line == NULL || line[0] == '#')
 		{
 			line_count++;
+			continue;
 		}
 		s = get_op_func(line, stack, line_count);
 		if (s == 1)

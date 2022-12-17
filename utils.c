@@ -51,16 +51,21 @@ void _push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void _pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	stack_t *runner;
+	stack_t *runner = *stack;
 
-	runner = *stack;
-	while (runner != NULL)
+	if (stack == NULL || *stack == NULL)
+		return;
+
+	while (runner)
 	{
+		if (runner->next == NULL)
+			break;
 		printf("%d\n", runner->n);
 		runner = runner->next;
 	}
+	return;
 }
 
 /**
@@ -112,7 +117,7 @@ void free_dlistint(stack_t *head)
 {
 	stack_t *tmp;
 
-	while (head != NULL)
+	while (head)
 	{
 		tmp = head->next;
 		free(head);

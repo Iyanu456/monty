@@ -10,5 +10,6 @@ int main(int argc, char **argv)
 	}
 
 	read_file(argv[1], &stack);
+	free_dlistint(stack);
 	return (0);
 }

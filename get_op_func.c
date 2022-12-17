@@ -5,9 +5,9 @@ int get_op_func(char *str, stack_t **stack, int line_number)
 
 	instruction_t instruct[] = {
 		{"push", _push},
-		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"pall", _pall},
 		{NULL, NULL},
 	};
 
@@ -18,7 +18,6 @@ int get_op_func(char *str, stack_t **stack, int line_number)
 			instruct[i].f(stack, line_number);
 			return(0);
 		}
-		i++;
 	}
 
 	return (1);
