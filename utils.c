@@ -53,14 +53,14 @@ void _push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
  */
 void _pall(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	stack_t *runner = *stack;
+	stack_t *runner;
 
-	if (stack == NULL || *stack == NULL)
+	if  (stack == NULL)
 		return;
-
+	runner = *stack;
 	while (runner)
 	{
-		if (runner->next == NULL)
+		if (!runner->n)
 			break;
 		printf("%d\n", runner->n);
 		runner = runner->next;
