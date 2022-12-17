@@ -31,6 +31,7 @@ void read_file(char *file, stack_t **stack)
 		}
 		line_count++;
 	}
+	free(var_global.buffer);
 	check = fclose(var_global.file);
 	if (check == -1)
 		exit(-1);

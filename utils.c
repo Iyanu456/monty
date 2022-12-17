@@ -25,7 +25,7 @@ int isnum(char *str)
 	return (1);
 }
 
-void _push(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top;
 	(void)line_number;
