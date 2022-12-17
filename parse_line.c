@@ -12,7 +12,7 @@ char *parse_line(char *buffer, unsigned int line_num)
 	if (strcmp(op_code, push) == 0)
 	{
 		arg = strtok(NULL, "\n ");
-		if (isdigit(arg) >= 1 && arg != NULL)
+		if (isnum(arg) == 1 && arg != NULL)
 			var_global.push_arg = atoi(arg);
 		else
 		{
